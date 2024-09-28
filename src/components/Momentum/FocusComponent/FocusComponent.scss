@@ -1,0 +1,25 @@
+.focus-component {
+  font-family: "Quicksand", sans-serif;
+  color: white;
+  opacity: 0.6;
+
+  h2 {
+    text-align: center;
+  }
+  textarea {
+    margin-top: 1rem;
+    font-size: 32px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 4px;
+    width: 600px;
+    resize: none;
+    overflow-y: hidden;
+    
+  }
+}

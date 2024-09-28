@@ -1,0 +1,51 @@
+.btn {
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-family: "Quicksand", sans-serif;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn svg {
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.btn rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3;
+  stroke-dasharray: 422, 0;
+  transition: all 0.35s linear;
+}
+
+.btn:hover {
+  background: rgba(225, 51, 45, 0);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.btn:hover rect {
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}

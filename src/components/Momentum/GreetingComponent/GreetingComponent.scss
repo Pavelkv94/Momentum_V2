@@ -1,0 +1,33 @@
+.greeting-wrapper {
+  font-family: "Quicksand", sans-serif;
+  color: white;
+  width: 100%;
+
+  h1 {
+    text-align: center;
+    cursor: default;
+    margin-bottom: 1rem;
+
+    @media (max-width: 700px) {
+      font-size: 32px;
+    }
+  }
+
+  input {
+    font-size: 32px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 4px;
+    max-width: 300px;
+  }
+
+  h2 {
+    opacity: 0.6;
+    text-align: center;
+  }
+}

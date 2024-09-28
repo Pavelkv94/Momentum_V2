@@ -1,0 +1,22 @@
+.time-wrapper {
+  cursor: default;
+
+  time {
+
+    font-size: 8rem;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    font-family: "Quicksand", sans-serif;
+    color: white;
+
+    @media (max-width: 700px) {
+      font-size: 6rem;
+    }
+  }
+  #date {
+    margin-bottom: 3rem;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    color: white;
+  }
+}
