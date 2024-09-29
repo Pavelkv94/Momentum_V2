@@ -10,7 +10,7 @@ const RelaxComponent = () => {
           <p>Foster an atmosphere conducive to relaxation and rejuvenation of life energy.</p>
 
           {cards.map((el, i) => (
-            <a key={i} href={`/meditation/${el.link}`}>
+            <a key={i} href={`/${el.link}`}>
               <div className="card" style={{ backgroundImage: `url(${el.imageUrl})` }}>
                 {el.title}
               </div>
