@@ -45,6 +45,25 @@
       background: transparent;
     }
 
+    .visible-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 21;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      border: 1px solid white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(255, 255, 255, 0.3);
+      }
+    }
+
     .panel {
       width: 300px;
       height: calc(100% - 20px);
@@ -54,11 +73,11 @@
       color: white;
       display: flex;
       flex-direction: column;
-      z-index: 99;
+      z-index: 20;
       border-radius: 15px;
-      padding: 10px;
-      background: rgb(255, 255, 255, 0.2);
-        border: 1px solid white;
+      padding: 25px 10px 10px 10px;
+      background: rgba(139, 139, 139, 0.4);
+      border: 1px solid hsl(0, 0%, 100%);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
       .places-list,
@@ -70,6 +89,7 @@
         overflow-x: hidden;
         overflow-y: scroll;
         border-radius: 5px;
+        margin-top: 5px;
 
         span {
           padding: 2px 4px;
@@ -189,5 +209,45 @@
         }
       }
     }
+  }
+
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255, 0.3);
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 10px;
+
+    &:hover {
+      width: 150px;
+      height: 50px;
+      border-radius: 25px;
+    }
+
+    .back-button-text {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      position: absolute;
+      left: 40px;
+      white-space: nowrap;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+  }
+
+  .back-button:hover .back-button-text {
+    opacity: 1;
   }
 }

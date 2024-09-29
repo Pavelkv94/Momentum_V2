@@ -3,6 +3,10 @@ import "./Meditation.scss";
 import YouTube from "react-youtube";
 import playIcon from "../../assets/play.svg";
 import pauseIcon from "../../assets/pause.svg";
+import hideIcon from "../../assets/hide.svg";
+import showIcon from "../../assets/show.svg";
+import lefrArrowIcon from "../../assets/left-arrow.svg";
+
 import PropTypes from "prop-types";
 
 const Meditation = ({ data }) => {
@@ -13,6 +17,8 @@ const Meditation = ({ data }) => {
   const [radio, setRadio] = useState("");
   const [radioVolume, setRadioVolume] = useState(1); // Громкость от 0 до 1
   const [isPlayingRadio, setIsPlayingRadio] = useState(false);
+
+  const [openPanel, setOpenPanel] = useState(true);
 
   const [isMuted, setIsMuted] = useState(true);
 
@@ -29,7 +35,8 @@ const Meditation = ({ data }) => {
       fs: 0,
       loop: 1,
       modestbranding: 1,
-      start: 60,
+      start: currentInstance.videoStart,
+      subtitles: 0,
     },
   };
 
@@ -69,17 +76,25 @@ const Meditation = ({ data }) => {
     }
   }, [radio]);
 
-  useEffect(() => {
-    // audioRef?.current?.stop();
-  }, [currentInstance]);
-
   return (
     <div className="meditation-wrapper">
       <div className="video-wrapper">
         <YouTube ref={iframeRef} videoId={currentInstance.videoUrl} opts={opts} className="youtube-player" />
 
         <div className="video-bloker"></div>
-        <div className="panel">
+
+        <div className="visible-icon" onClick={() => setOpenPanel((prev) => !prev)}>
+          <img src={openPanel ? hideIcon : showIcon} width={25} height={25} />
+        </div>
+
+        <a href="/">
+          <div className="back-button">
+            <img src={lefrArrowIcon} width={20} />
+            <div className="back-button-text">Back to Main</div>
+          </div>
+        </a>
+
+        <div className="panel" style={openPanel ? {} : {display: "none"}}>
           <h3>Choose location</h3>
           <div className="places-list">
             {data.map((el, i) => (
@@ -102,15 +117,19 @@ const Meditation = ({ data }) => {
             <button onClick={toggleMute}>{`Ambient noise ${isMuted ? "OFF" : "ON"}`}</button>
           </div>
 
-          <h3>Choose radiostation</h3>
-          <div className="audio-list">
-            {currentInstance &&
-              currentInstance.radio.map((el, i) => (
-                <span key={i} onClick={handleSongClick(el)} style={radio.title === el.title ? { backgroundColor: "rgb(255, 255, 255, 0.3)" } : {}}>
-                  {el.title}
-                </span>
-              ))}
-          </div>
+          {currentInstance.radio.length > 0 && (
+            <section>
+              <h3>Choose radio station</h3>
+              <div className="audio-list">
+                {currentInstance &&
+                  currentInstance.radio.map((el, i) => (
+                    <span key={i} onClick={handleSongClick(el)} style={radio.title === el.title ? { backgroundColor: "rgb(255, 255, 255, 0.3)" } : {}}>
+                      {el.title}
+                    </span>
+                  ))}
+              </div>
+            </section>
+          )}
 
           {radio && (
             <div className="radio-player">
@@ -134,5 +153,5 @@ const Meditation = ({ data }) => {
 export default Meditation;
 
 Meditation.propTypes = {
-  data: PropTypes.string,
+  data: PropTypes.array,
 };

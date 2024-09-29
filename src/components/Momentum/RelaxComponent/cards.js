@@ -1,5 +1,7 @@
 import car from "../../../assets/cards/car.webp";
-import walk from "../../../assets/cards/walk.jpg";
+import walkNature from "../../../assets/cards/walkNature.jpg";
+import walkCity from "../../../assets/cards/walkCity.jpeg";
+
 
 export const cards = [
   {
@@ -8,8 +10,13 @@ export const cards = [
     link: "drive",
   },
   {
-    title: "Walk",
-    imageUrl: walk,
-    link: "walk",
+    title: "City Walk",
+    imageUrl: walkCity,
+    link: "walkCity",
+  },
+  {
+    title: "Nature Walk",
+    imageUrl: walkNature,
+    link: "walkNature",
   },
 ];
