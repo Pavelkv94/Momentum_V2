@@ -8,6 +8,7 @@ import showIcon from "../../assets/show.svg";
 import lefrArrowIcon from "../../assets/left-arrow.svg";
 
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Meditation = ({ data }) => {
   const iframeRef = useRef(null);
@@ -87,12 +88,12 @@ const Meditation = ({ data }) => {
           <img src={openPanel ? hideIcon : showIcon} width={25} height={25} />
         </div>
 
-        <a href="/">
+        <Link to="/">
           <div className="back-button">
             <img src={lefrArrowIcon} width={20} />
             <div className="back-button-text">Back to Main</div>
           </div>
-        </a>
+        </Link>
 
         <div className="panel" style={openPanel ? {} : {display: "none"}}>
           <h3>Choose location</h3>
