@@ -80,7 +80,7 @@ const Meditation = ({ data }) => {
   return (
     <div className="meditation-wrapper">
       <div className="video-wrapper">
-        <YouTube ref={iframeRef} videoId={currentInstance.videoUrl} opts={opts} className="youtube-player" />
+        <YouTube ref={iframeRef} videoId={currentInstance.videoUrl[Math.floor(Math.random() * currentInstance.videoUrl.length)]} opts={opts} className="youtube-player" />
 
         <div className="video-bloker"></div>
 
